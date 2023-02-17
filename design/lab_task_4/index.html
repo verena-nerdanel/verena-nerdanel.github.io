@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task # 4</title>
+</head>
+<body>
+<input type="text" oninput="onChange(this)">
+<div id="output-sum-even"></div>
+<div id="output-max"></div>
+<div id="output-min"></div>
+
+<script>
+    function onChange(target){
+        const list = target.value.split(" ").map(e => parseInt(e));
+
+        let sumEven = 0;
+        for (let i = 0; i < list.length; i++) {
+            if ((i % 2) == 0) {
+                sumEven = sumEven + list[i];
+            }
+        }
+
+        const outputSumEven = document.getElementById("output-sum-even");
+        outputSumEven.innerHTML = "sum: " + sumEven;
+
+        let maxIndex = 0;
+        for (let i = 1; i < list.length; i++) {
+            if (list[i] > list[maxIndex]) {
+                maxIndex = i;
+            }
+        }
+
+        const outputMax = document.getElementById("output-max");
+        outputMax.innerHTML = "max index: " + maxIndex + "<br/>max element: " + list[maxIndex];
+
+        let minIndex = 1;
+        for (let i = 1; i < list.length; i++) {
+             if ((i % 2) == 1) {
+                  if (list[i] < list[minIndex]) {
+                      minIndex = i;
+                  }
+             }
+        }
+
+        const outputMin = document.getElementById("output-min");
+        outputMin.innerHTML = "min index: " + minIndex + "<br/>min element: " + list[minIndex];
+    }
+</script>
+</body>
+</html>
