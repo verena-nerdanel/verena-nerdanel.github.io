@@ -1,0 +1,27 @@
+.page {
+    display: flex;
+    background-color: #ededed;
+    color: #221c1c;
+    font-family: system-ui;
+}
+
+.content {
+    padding: 20px;
+}
+
+menu {
+    min-width: 200px;
+    padding-left: 0;
+}
+
+menu a {
+    text-decoration: none;
+}
+
+menu ul {
+    list-style-type: none;
+}
+
+.menu-item-selected {
+    font-weight: bold;
+}
